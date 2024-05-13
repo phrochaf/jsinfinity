@@ -1,34 +1,3 @@
-/*var name = "Pedro"
-
-let dodge = {
-  pneu: "borracha",
-  padrão: "Completa",
-  completa: true
-}
-
-const minhaLista = [
-  name,
-  dodge,
-  {
-    animal:'cat',
-    age: 3},
-  "monkey"
-]
-
-console.log(minhaLista[1].pneu)
-
-let a = '10
-let b = 10
-if(a===b){
-  console.log('Iguais')
-}
-else(console.log('Diferentes'))*/
-
-/*number = prompt("Insira o número:")
-if(number%2==0){
-    console.log("Par")
-}else(console.log("Ímpar"))*/
-
 peso = prompt("Insira seu peso(em kg):")
 altura = prompt("Insira sua altura(em m):")
 imc= peso/(altura*altura)
