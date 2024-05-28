@@ -1,0 +1,210 @@
+:root {
+    --font-size-base: 1rem;
+    --font-size-small: 0.875rem;
+    --font-size-large: 1.25rem;
+    --padding-small: 0.5rem;
+    --padding-medium: 1rem;
+    --padding-large: 1.5rem;
+    --border-radius: 0.5rem;
+    --box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.1);
+    --column-width: 30%;
+    --column-width-small: 45%;
+    --column-width-full: 100%;
+    --column-margin: 0.625rem;
+    --column-margin-small: 0.3125rem;
+    --column-padding: 0.625rem;
+    --task-margin: 0.3125rem;
+    --task-padding: 0.625rem;
+    --task-padding-small: 0.3125rem;
+    --task-font-size-small: 0.75rem;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, black, gray);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-size: var(--font-size-base);
+}
+h1 {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color:  gray;
+    
+}
+
+.kanban-board {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 90%;
+    margin: auto;
+    box-sizing: border-box;
+}
+
+.kanban-column {
+    background-color: #fff;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    width: var(--column-width);
+    min-width: 15rem;
+    margin: var(--column-margin);
+    padding: var(--column-padding);
+    box-sizing: border-box;
+    
+}
+
+.kanban-column:hover {
+    background-color: #a8a8a8;
+}
+
+
+.kanban-column h2 {
+    text-align: center;
+    border-bottom: 0.125rem solid #eee;
+    padding-bottom: var(--padding-small);
+    margin: 0 0 var(--padding-small) 0;
+    font-size: var(--font-size-large);
+}
+
+.kanban-tasks {
+    min-height: 12.5rem;
+    margin-top: var(--padding-small);
+}
+
+.task {
+    background-color: #f3efef;
+    border-radius: var(--border-radius);
+    margin: var(--task-margin);
+    padding: var(--task-padding);
+    cursor: grab;
+    border: 0.125rem solid transparent; /* Default border color */
+    font-size: var(--font-size-base);
+    display: flex;
+    justify-content: space-between;
+    
+
+}
+
+.task.dragging {
+    opacity: 0.5;
+}
+
+.task.due-soon {
+    border-color: red; /* Border color for tasks due soon */
+}
+
+.kanban-tasks.over {
+    border: 0.125rem dashed #000;
+}
+
+#todo {
+    background-color: white;
+}
+
+#in-progress {
+    background-color: yellow;
+}
+
+#done {
+    background-color: green;
+}
+
+#todo:hover {
+    background-color: rgb(165, 165, 165);
+}
+
+#in-progress:hover {
+    background-color: rgb(165, 165, 0);
+}
+
+#done:hover {
+    background-color: rgb(1, 80, 1);
+}
+
+button {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border-radius: 5px;
+    border: none;
+    display:flex;
+    background-color: #ffffff;
+    font-size: medium;
+
+  
+}
+
+button:hover {
+    background-color: #8a7f7f;
+    cursor: pointer;
+}
+
+/* Responsive Styles */
+@media (max-width: 1280px) {
+    .kanban-board {
+        width: 95%;
+    }
+
+    .kanban-column {
+        width: var(--column-width-small);
+    }
+}
+
+@media (max-width: 768px) {
+    .kanban-column {
+        width: var(--column-width-full);
+    }
+}
+
+@media (max-width: 480px) {
+    .kanban-column {
+        width: var(--column-width-full);
+    }
+
+    .kanban-tasks {
+        min-height: 9.375rem;
+    }
+
+    .task {
+        padding: var(--task-padding-small);
+        font-size: var(--font-size-small);
+    }
+}
+
+@media (max-width: 320px) {
+    .kanban-column {
+        width: var(--column-width-full);
+        margin: var(--column-margin-small);
+    }
+
+    .task {
+        padding: var(--task-padding-small);
+        font-size: var(--task-font-size-small);
+        
+    }
+}
+
+/* Orientation Styles */
+@media (orientation: landscape) {
+    .kanban-board {
+        flex-direction: row;
+    }
+
+    .kanban-column {
+        width: var(--column-width);
+    }
+}
+
+@media (orientation: portrait) {
+    .kanban-board {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .kanban-column {
+        width: 90%;
+        margin-bottom: var(--padding-large);
+    }
+}
