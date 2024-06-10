@@ -1,8 +1,9 @@
 
-let cont = 0;
+
 
 function nVogais(palavra){
-    
+    let cont = 0;
+
     for (let i=0; i <palavra.length; i++){
         console.log(palavra[i])
 
@@ -11,8 +12,9 @@ function nVogais(palavra){
             };
 
     ;
-    }};
+    }
+return cont;
+};
 
 
-nVogais("Beterraba");
-console.log(cont);
+console.log(nVogais("Beterraba"));
