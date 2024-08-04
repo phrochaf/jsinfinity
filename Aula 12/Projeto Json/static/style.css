@@ -1,0 +1,164 @@
+body {
+    background-color: #2b2b2b;
+    color: #f1e4c2;
+    font-family: 'MedievalSharp', serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: 3em;
+    text-align: center;
+    margin: 20px 0;
+    font-family: 'MedievalSharp', serif;
+}
+
+#form, #catalogo, #acervo, #search, #resultado, #resultLabel {
+    background-color: #3e3e3e;
+    border: 2px solid #6e5332;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px auto;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 0 10px #000;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-top: 10px;
+    font-family: 'MedievalSharp', serif;
+}
+
+input, select {
+    width: calc(100% - 20px);
+    padding: 8px;
+    margin: 5px 0;
+    border: 2px solid #6e5332;
+    border-radius: 5px;
+    background-color: #f1e4c2;
+    color: #2b2b2b;
+    font-family: 'MedievalSharp', serif;
+}
+
+#nota {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0;
+    border: 2px solid #6e5332;
+    border-radius: 5px;
+    background-color: #f1e4c2;
+    color: #2b2b2b;
+    font-family: 'MedievalSharp', serif;
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #6e5332;
+    color: #f1e4c2;
+    font-size: 1.2em;
+    font-family: 'MedievalSharp', serif;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #876a48;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://www.transparenttextures.com/patterns/aged-papyrus.png');
+    opacity: 0.3;
+    z-index: -1;
+}
+
+#lista, #resultado, #resultLabel {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 1em;
+    text-align: left;
+    background-color: #3e3e3e;
+    color: #f1e4c2;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+#lista thead, #resultado thead, #resultLabel thead {
+    background-color: #6e5332;
+}
+
+#lista th, #lista td, #resultado th, #resultado td, #resultLabel td, #resultLabel th {
+    padding: 12px 15px;
+    border: 1px solid #6e5332;
+}
+
+#lista th, #resultado th, #resultLabel th {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+#lista tbody tr:nth-child(even), #resultado tbody tr:nth-child(even) {
+    background-color: #4e4e4e;
+}
+
+#lista tbody tr:hover, #resultado tbody tr:hover {
+    background-color: #5e5e5e;
+    cursor: pointer;
+}
+
+#search {
+    background-color: #3e3e3e;
+    border: 2px solid #6e5332;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px auto;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 0 10px #000;
+}
+
+#search label {
+    display: block;
+    font-weight: bold;
+    margin-top: 10px;
+    font-family: 'MedievalSharp', serif;
+}
+
+#search input {
+    width: calc(100% - 20px);
+    padding: 8px;
+    margin: 5px 0;
+    border: 2px solid #6e5332;
+    border-radius: 5px;
+    background-color: #f1e4c2;
+    color: #2b2b2b;
+    font-family: 'MedievalSharp', serif;
+}
+
+#search button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #6e5332;
+    color: #f1e4c2;
+    font-family: 'MedievalSharp', serif;
+    cursor: pointer;
+}
+
+#search button:hover {
+    background-color: #876a48;
+}

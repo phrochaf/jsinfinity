@@ -1,0 +1,30 @@
+[
+  {
+    "ano": "1954",
+    "autor": "J. R. R. Tolkien",
+    "genero": "Fantasia Medieval",
+    "nome": "O Senhor dos An\u00e9is - A Sociedade do Anel",
+    "nota": "5"
+  },
+  {
+    "ano": "2011",
+    "autor": "Andrzej Sapkowski",
+    "genero": "Fantasia Medieval",
+    "nome": "O \u00daltimo Desejo - The Witcher",
+    "nota": "5"
+  },
+  {
+    "ano": "1996",
+    "autor": "George R. R. Martin",
+    "genero": "Fantasia Medieval",
+    "nome": "A Guerra dos Tronos",
+    "nota": "5"
+  },
+  {
+    "nome": "O C\u00f3digo da Vinci",
+    "autor": "Dan Brown",
+    "genero": "Fic\u00e7\u00e3o Policial",
+    "ano": "2003",
+    "nota": "5"
+  }
+]
