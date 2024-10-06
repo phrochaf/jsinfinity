@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Wayne Security{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <!-- Menu de Navegação -->
+    <nav aria-label="Menu de Navegação Principal" class="top-nav">
+        <div class="nav-brand">
+            <img src="{{ url_for('static', filename='icons/batman_icon.png') }}" alt="Ícone da Empresa" class="batman-icon">
+            <span class="company-name">Wayne Security</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="{{ url_for('index') }}">Página Inicial</a></li>
+            <li><a href="{{ url_for('view_resources') }}">Visualizar Recursos</a></li>
+            {% if role %}
+            <li><a href="{{ url_for('register_resource') }}">Adicionar Recurso</a></li>
+            {% endif %}
+            <li><a href="{{ url_for('logout') }}">Logout</a></li>
+        </ul>
+    </nav>
+
+    <!-- Conteúdo Específico de Cada Página -->
+    <div class="content">
+        {% block content %}
+        <!-- Conteúdo da Página Específica -->
+        {% endblock %}
+    </div>
+</body>
+</html>

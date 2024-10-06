@@ -1,0 +1,205 @@
+/* Estilo Global */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #2c2c2c;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilo Geral */
+.content {
+    padding: 20px;
+    background-color: #fff;
+    margin: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    color: #333;
+}
+
+/* Títulos */
+h1, h2, h3 {
+    color: #f39c12; /* Laranja */
+}
+
+/* Links */
+a {
+    color: #f39c12;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Estilo do Menu de Navegação */
+/* Estilo do Menu de Navegação */
+.top-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2c3e50;
+    padding: 1em;
+}
+
+.nav-brand {
+    display: flex;
+    align-items: center;
+}
+
+.batman-icon {
+    width: 40px; /* Ajuste o tamanho do ícone conforme necessário */
+    height: 40px; /* Ajuste o tamanho do ícone conforme necessário */
+    margin-right: 10px; /* Espaçamento entre o ícone e o nome */
+    background-color: transparent;
+}
+
+.company-name {
+    color: #ecf0f1;
+    font-size: 1.5em; /* Ajuste o tamanho da fonte conforme necessário */
+}
+
+.nav-links {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: #ecf0f1;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav-links a:hover {
+    color: #3498db;
+}
+/* Botões */
+.btn, button, input[type="submit"] {
+    background-color: #f39c12; /* Laranja */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 5px;
+}
+
+.btn:hover, button:hover, input[type="submit"]:hover {
+    background-color: #e67e22; /* Laranja mais escuro */
+}
+
+/* Formulários */
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="number"],
+textarea { 
+    width: 98%;
+    padding: 10px;
+    margin: 5px 0 15px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    background-color: #333;
+    color: #ffffff;
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 15px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    background-color: #333;
+    color: #ffffff;
+}
+
+
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    border-color: #f39c12;
+    outline: none;
+}
+
+/* Tabela */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: left;
+    color: #333;
+}
+
+th {
+    background-color: #444;
+    color: #f39c12;
+}
+
+/* Rodapé */
+.footer {
+    background-color: #1c1c1c;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Estilos Responsivos */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul li {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+    .chart-container {
+        height: 300px; /* Diminuir a altura em telas menores */
+    }
+}
+
+/* Estilo do Gráfico */
+
+
+/* Ajustes para a Tabela */
+.table-container {
+    overflow-x: auto; /* Adiciona rolagem horizontal se necessário */
+}
+
+.chart-container {
+    width: 100%; /* Largura do contêiner */
+    height: 400px; /* Altura fixa do gráfico */
+    max-height: 70vh; /* Limite a altura a 70% da altura da tela */
+    position: relative; /* Para garantir que o canvas se posicione corretamente */
+    overflow: hidden; /* Esconde qualquer conteúdo que ultrapasse o limite */
+}
+
+canvas {
+    width: 100% !important; /* Faz com que o canvas ocupe 100% da largura do contêiner */
+    height: auto !important; /* Mantém a proporção do gráfico */
+}
+
+.alert {
+    padding: 15px;
+    margin: 20px 0;
+    background-color: #f44336; /* Vermelho */
+    color: white;
+    border-radius: 5px;
+}

@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+
+{% block content %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+{% if alert %}
+    <script>
+        alert("{{ alert }}");
+    </script>
+{% endif %}
+
+<h1>Recursos</h1>
+<div class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Descrição</th>
+                <th>Quantidade</th>
+                <th>Localização</th>
+                <th>Situação</th>
+                {% if role == 'manager' or role == 'security_admin' %}
+                    <th>Ações</th>
+                {% endif %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for resource in resources %}
+            <tr>
+                <td>{{ resource['id'] }}</td>
+                <td>{{ resource['name'] }}</td>
+                <td>{{ resource['description'] }}</td>
+                <td>{{ resource['quantity'] }}</td>
+                <td>{{ resource['location'] }}</td>
+                <td>{{ resource['status'] }}</td>
+                {% if role == 'manager' or role == 'security_admin' %}
+                    <td>
+                        <form action="{{ url_for('edit_resource', resource_id=resource['id']) }}">
+                            <button type="submit">Alterar</button>
+                        </form>
+                        <form action="{{ url_for('delete_resource', resource_id=resource['id']) }}" method="POST">
+                            <button type="submit" onclick="return confirm('Tem certeza que deseja remover este recurso?');">Remover</button>
+                        </form>
+                    </td>
+                {% endif %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<hr>
+
+<!-- Seção do gráfico -->
+<div class="chart-container">
+    <canvas id="resourceChart"></canvas>
+</div>
+
+<script nonce="{{ g.nonce }}"> <!-- Usar o nonce aqui -->
+    var ctx = document.getElementById('resourceChart').getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: {{ labels|tojson }},
+            datasets: [{
+                label: 'Quantidade de Recursos por Descrição',
+                data: {{ counts|tojson }},
+                backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                borderColor: 'rgba(54, 162, 235, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+</script>
+
+<hr>
+<form action="{{ url_for('register_resource') }}">
+    <button type="submit">Registrar Novo Recurso</button>
+</form>
+
+{% endblock %}

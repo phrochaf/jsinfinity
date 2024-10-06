@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<body>
+    <h1>Registrar Novo Recurso</h1>
+    <form action="{{ url_for('register_resource') }}" method="POST">
+        <label for="name">Nome do Recurso:</label>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="location">Localização:</label>
+        <input type="text" id="location" name="location" required><br><br>
+
+        <label for="quantity">Quantidade:</label>
+        <input type="number" id="quantity" name="quantity" required min="0"><br><br>
+
+        <label for="description">Categoria do Recurso:</label>
+        <select id="description" name="description" required>
+            <option value="Armas">Armas</option>
+            <option value="Equipamentos de Vigilância">Equipamentos de Vigilância</option>
+            <option value="Acessórios de Segurança">Acessórios de Segurança</option>
+            <option value="Veículos de Segurança">Veículos de Segurança</option>
+            <option value="Sistemas de Controle de Acesso">Sistemas de Controle de Acesso</option>
+            <option value="Material de Treinamento">Material de Treinamento</option>
+            <option value="Armazenamento e Transporte">Armazenamento e Transporte</option>
+            <option value="Dispositivos de Comunicação">Dispositivos de Comunicação</option>
+        </select><br>
+
+        <label for="status">Status:</label>
+        <select id="status" name="status">
+            <option value="available">Disponível</option>
+            <option value="in_use">Em uso</option>
+            <option value="maintenance">Manutenção</option>
+        </select><br><br>
+
+        <input type="submit" value="Registrar Recurso">
+    </form>
+</body>
+{% endblock %}
